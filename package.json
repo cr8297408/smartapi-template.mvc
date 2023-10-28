@@ -1,6 +1,6 @@
 {
   "name": "smartapi-template.mvc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Template smartapi for mvc arquitecture",
   "scripts": {
     "start": "node build/index.js",
