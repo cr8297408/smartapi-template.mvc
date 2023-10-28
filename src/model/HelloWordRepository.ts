@@ -1,19 +1,27 @@
-import { IProxyRepository } from "../interfaces";
+import { HelloWord, IProxyRepository } from "../interfaces";
 
-export class HelloWordRepository<T> implements IProxyRepository<T> {
+export class HelloWordRepository implements IProxyRepository<HelloWord> {
     getAll =  () => {
-        return []
+        return [
+            {
+                saludo: 'Hello World!!!'
+            }
+        ]
     };
     getOne = () => {
-        return {} as T
+        return {
+            saludo: "Hello World!!!"
+        }
     };
-    create = () => {
-        return {} as T
+    create = (data: HelloWord) => {
+        return data;
     };
-    update = () => {
-        return {} as T
+    update = (data: HelloWord) => {
+        return data
     };
     delete = () => {
         return true
     };
 }
+
+export const HelloWordRepositoryInstance = new HelloWordRepository();
