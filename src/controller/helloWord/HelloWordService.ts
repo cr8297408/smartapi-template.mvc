@@ -1,4 +1,4 @@
-import { HelloWordRepository } from "../../model"
+import { HelloWordRepository } from "../../repositories"
 
 export interface HelloWordServiceDependences {
   repository: HelloWordRepository;

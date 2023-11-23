@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { HelloWordService } from ".";
-import { HelloWordRepositoryInstance } from "../../model";
+import { HelloWordRepositoryInstance } from "../../repositories";
 
 export class HelloWordController {
   #service: HelloWordService;
