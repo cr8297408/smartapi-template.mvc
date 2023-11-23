@@ -1,5 +1,5 @@
 import { HttpServer } from "./app";
-import AppRouter from "./views";
+import AppRouter from "./routes";
 
 const app = new HttpServer({
   port: 3000,
