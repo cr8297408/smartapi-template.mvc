@@ -9,7 +9,6 @@ export class LocalEnvironment implements IEnvironment {
       URL: "",
       PORT: ""
     }
-    // TODO: ADD CUSTOM ENVIROMENTERROR
     enviroments.URL = process.env.URL ?? '';
     if (enviroments.URL === '') throw new EnvironmentError('URL');
     enviroments.PORT = process.env.PORT ?? '';
