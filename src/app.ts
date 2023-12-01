@@ -23,6 +23,7 @@ export class HttpServer {
     this.#app.use('/api/v1', this.#router);
     this.#app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
     this.#app.use('*', NotFoundMiddlewareRoutesInstance.handling);
+    this.#app.use('*', ErrorHandlerMiddlewareInstance.handlingGeneralError);
     this.#app.use('*', ErrorHandlerMiddlewareInstance.handling);
 
     this.#app.listen(this.#port, () => {

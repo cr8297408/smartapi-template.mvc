@@ -23,17 +23,15 @@ export class HelloWordController {
     res.json(serviceResponse)
   }
   create = (req: Request, res: Response) => {
-    const { saludo } = req.body;
-    const serviceResponse = this.#service.create({
-      saludo
-    });
+    const data = req.body;
+    const serviceResponse = this.#service.create(data);
     res.json(serviceResponse)
   }
   update = (req: Request, res: Response) => {
     const { uuid } = req.params;
-    const { saludo } = req.body;
+    const data = req.body;
     const serviceResponse = this.#service.update({
-      saludo,
+      ...data,
       uuid
     });
     res.json(serviceResponse)
