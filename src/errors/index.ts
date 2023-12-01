@@ -4,3 +4,4 @@ export * from './GeneralInternalError';
 export * from './DatabaseError';
 export * from './EnviromentError';
 export * from './ValidationPayloadError';
+export * from './RepositoryError';

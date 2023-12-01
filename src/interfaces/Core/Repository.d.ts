@@ -1,7 +1,9 @@
+import { Payload, Response } from ".";
+
 export interface IProxyRepository<T> {
-    getAll: () => T[];
-    getOne: () => T;
-    create: (data: T) => T;
-    update: (data: T, id: string) => T;
-    delete: (id: string) => boolean;
+    getAll: (data?: Payload) => T[];
+    getOne: (data: Payload) => Response;
+    create: (data: Payload) => Response;
+    update: (data: Payload) => Response;
+    delete: (data: Payload) => Response;
 }

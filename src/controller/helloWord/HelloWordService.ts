@@ -1,3 +1,4 @@
+import { CreateHelloWordPayload, DeleteHelloWordPayload, GetOneHelloWordPayload, UpdateHelloWordPayload } from "../../interfaces";
 import { HelloWordRepository } from "../../repositories"
 
 export interface HelloWordServiceDependences {
@@ -10,5 +11,23 @@ export class HelloWordService {
   }
   getAll = () => {
     return this.#repository.getAll();
+  }
+  getOne = ({ uuid }: GetOneHelloWordPayload) => {
+    // Bussiness Logic
+    return this.#repository.getOne({
+      uuid
+    });
+  }
+  create = (data: CreateHelloWordPayload) => {
+    // Bussiness Logic
+    return this.#repository.create(data);
+  }
+  update = (data: UpdateHelloWordPayload) => {
+    // Bussiness Logic
+    return this.#repository.update(data);
+  }
+  delete = (data: DeleteHelloWordPayload) => {
+    // Bussiness Logic
+    return this.#repository.delete(data);
   }
 }
