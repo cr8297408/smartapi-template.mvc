@@ -7,5 +7,6 @@ export class ValidationPayloadError extends SystemError {
     this.name = 'ValidationError';
     this.cause = cause;
     this.kind = 'validation';
+    this.statusCode = 400
   }
 }

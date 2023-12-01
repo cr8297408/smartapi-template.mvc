@@ -6,5 +6,6 @@ export class DatabaseError extends SystemError {
     this.code = 'connection/connect-database-error';
     this.name = 'DatabaseError';
     this.kind = 'system';
+    this.statusCode = 500
   }
 }

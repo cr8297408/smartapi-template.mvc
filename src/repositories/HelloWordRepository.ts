@@ -4,8 +4,24 @@ import { CreateHelloWordPayload, DeleteHelloWordPayload, GetOneHelloWordPayload,
 let saludos = [
     {
         uuid: "1",
-        saludo: 'Hello World!!!'
-    }
+        saludo: 'Hello First World!!!'
+    },
+    {
+        uuid: "2",
+        saludo: 'Hello Second World!!!'
+    },
+    {
+        uuid: "3",
+        saludo: 'Hello Third World!!!'
+    },
+    {
+        uuid: "4",
+        saludo: 'Hello Fourth World!!!'
+    },
+    {
+        uuid: "5",
+        saludo: 'Hello Fifth World!!!'
+    },
 ];
 
 export class HelloWordRepository implements IProxyRepository<HelloWord> {
@@ -22,6 +38,7 @@ export class HelloWordRepository implements IProxyRepository<HelloWord> {
         return saludos;
     };
     update = ({ uuid, saludo }: UpdateHelloWordPayload) => {
+        console.log("🚀 ~ file: HelloWordRepository.ts:41 ~ HelloWordRepository ~ uuid:", uuid);
         const findSaludo = saludos.find((e) => e?.uuid === uuid);
         if(findSaludo === undefined) throw new RepositoryError('HelloWordRepository', 'UpdateMethod');
         findSaludo.saludo = saludo;

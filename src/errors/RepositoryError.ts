@@ -6,5 +6,6 @@ export class RepositoryError extends SystemError {
     this.code = 'repository/repository-error';
     this.name = 'RepositoryError';
     this.kind = 'system';
+    this.statusCode = 400
   }
 }

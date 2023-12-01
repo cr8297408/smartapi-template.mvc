@@ -30,7 +30,8 @@ export class HelloWordController {
     res.json(serviceResponse)
   }
   update = (req: Request, res: Response) => {
-    const { saludo, uuid } = req.body;
+    const { uuid } = req.params;
+    const { saludo } = req.body;
     const serviceResponse = this.#service.update({
       saludo,
       uuid
