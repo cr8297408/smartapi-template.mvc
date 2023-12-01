@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { HelloWordController } from "../controller/helloWord";
+import { AsyncWrapperHandling } from "../utils";
 
 export class HelloWordRouter {
   router = Router();
@@ -28,7 +29,8 @@ export class HelloWordRouter {
      */
     this.router.get(
       '/',
-      this.#controller.getAll,
+      // 💡💡💡💡💡💡 this avoids having to use try catch on all of our controllers and is responsible for sending our errors to the ErrorHandler middleware
+      AsyncWrapperHandling(this.#controller.getAll),
     );
   }
 }

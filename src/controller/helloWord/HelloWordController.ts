@@ -12,11 +12,7 @@ export class HelloWordController {
   }
 
   getAll = (_: Request, res: Response) => {
-    try {
-      const serviceResponse = this.#service.getAll();
-      res.json(serviceResponse)
-    } catch (error) {
-      res.json(error)
-    }
+    const serviceResponse = this.#service.getAll();
+    res.json(serviceResponse)
   }
 }

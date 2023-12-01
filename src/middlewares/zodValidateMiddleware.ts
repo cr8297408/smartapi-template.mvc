@@ -1,16 +1,24 @@
 import { NextFunction, Request, Response } from "express";
-import { ZodObject } from "zod";
+import { ZodError, ZodObject } from "zod";
+import { ValidationPayloadError } from "../errors";
 
-export const validate = (schema: ZodObject<any>) => (req: Request, res: Response, next: NextFunction) => {
-  try {
-    schema.parse({
-      body: req.body,
-      query: req.query,
-      params: req.params,
-    });
+class ZodValidateMiddleware {
+  validate = (schema: ZodObject<any>) => (req: Request, _: Response, next: NextFunction) => {
+    try {
+      schema.parse({
+        body: req.body,
+        query: req.query,
+        params: req.params,
+      });
 
-    return next();
-  } catch (err) {
-    return res.status(400).send(err.errors);
+      return next();
+    } catch (err) {
+      if(err instanceof ZodError) {
+        throw new ValidationPayloadError(err.message, err.cause)
+      }
+      next(err)
+    }
   }
-};
+}
+
+export const ZodValidateMiddlewareInstance = new ZodValidateMiddleware()
