@@ -1,4 +1,4 @@
-import { Payload } from "./Core";
+import { Payload } from "../Core";
 
 export interface HelloWord {
     saludo: string;

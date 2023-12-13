@@ -1,5 +1,5 @@
 import express, { Application, Router } from 'express';
-import { HttpServerDependences } from './interfaces/Core';
+import { HttpServerDependences } from './domain/Core';
 import cors from 'cors';
 import swaggerUi from 'swagger-ui-express';
 import swaggerSpec from './docs/SwaggerConfig';

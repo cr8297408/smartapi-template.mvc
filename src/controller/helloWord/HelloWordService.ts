@@ -1,4 +1,4 @@
-import { CreateHelloWordPayload, DeleteHelloWordPayload, GetOneHelloWordPayload, UpdateHelloWordPayload } from "../../interfaces";
+import { CreateHelloWordPayload, DeleteHelloWordPayload, GetOneHelloWordPayload, UpdateHelloWordPayload } from "../../domain";
 import { HelloWordRepository } from "../../repositories"
 
 export interface HelloWordServiceDependences {

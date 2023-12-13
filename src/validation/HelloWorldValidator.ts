@@ -1,5 +1,9 @@
 import z from 'zod';
 
-export const HelloWordSchemaValidator = z.object({
-  saludo: z.string()
+export const CreateHelloWordSchemaValidator = z.object({
+  body: z.object({
+    saludo: z.string()
+  }),
+  query: z.object({}),
+  params: z.object({}),
 }).strict();

@@ -1,5 +1,5 @@
 import { RepositoryError } from "../errors";
-import { CreateHelloWordPayload, DeleteHelloWordPayload, GetOneHelloWordPayload, HelloWord, IProxyRepository, UpdateHelloWordPayload } from "../interfaces";
+import { CreateHelloWordPayload, DeleteHelloWordPayload, GetOneHelloWordPayload, HelloWord, IProxyRepository, UpdateHelloWordPayload } from "../domain";
 
 let saludos = [
     {

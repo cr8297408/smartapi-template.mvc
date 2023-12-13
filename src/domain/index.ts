@@ -1,2 +1,2 @@
-export * from './HelloWord';
+export * from './models';
 export * from './Core/Repository';

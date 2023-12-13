@@ -1,6 +1,8 @@
 import { Router } from "express";
 import { HelloWordController } from "../controller/helloWord";
 import { AsyncWrapperHandling } from "../utils";
+import { ZodValidateMiddlewareInstance } from "../middlewares";
+import { CreateHelloWordSchemaValidator } from "../validation";
 
 export class HelloWordRouter {
   router = Router();
@@ -94,6 +96,7 @@ export class HelloWordRouter {
      */
     this.router.post(
       '/create',
+      ZodValidateMiddlewareInstance.validate(CreateHelloWordSchemaValidator),
       // 💡💡💡💡💡💡 this avoids having to use try catch on all of our controllers and is responsible for sending our errors to the ErrorHandler middleware
       AsyncWrapperHandling(this.#controller.create),
     );
